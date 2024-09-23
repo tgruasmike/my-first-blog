@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Gruas y talleres Mike</title>
+    <title>Grúas y talleres Mike</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #a3a3a3;
         }
         header {
             background-color: #8faccc;
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 20px;
             text-align: center;
         }
@@ -21,13 +21,13 @@
             padding: 20px;
         }
         h2 {
-            color: #333;
-            border-bottom: 2px solid #8da7c2;
+            color: #4d4d4d;
+            border-bottom: 2px solid #504e4e;
             padding-bottom: 10px;
         }
         .item {
-            background-color: white;
-            border: 1px solid #ddd;
+            background-color: rgb(102, 102, 102);
+            border: 1px solid #a5a4a4;
             border-radius: 5px;
             margin: 10px 0;
             padding: 15px;
@@ -40,8 +40,8 @@
             border-radius: 5px;
         }
         footer {
-            background-color: #83a4c7;
-            color: white;
+            background-color: #94aac2;
+            color: rgb(241, 240, 240);
             text-align: center;
             padding: 10px;
             position: relative;
@@ -51,6 +51,12 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Grúas y Talleres Mike</h1>
+        <p>La mejor opción para tus necesidades automotrices</p>
+    </header>
+    <div class="container">
+
     <header>
         <div class="herramientas-container">
             <h2>Herramientas</h2>
@@ -146,21 +152,101 @@
         </script>
         
         
-        <h2>Servicios Ofrecidos</h2>
-        {% for servicio in servicios %}
-            <div class="item">
-                <img class="foto" src="{{ servicio.foto }}" alt="{{ servicio.nombre }}">
-                <div>
-                    <h3>{{ servicio.nombre }}</h3>
-                    <p>{{ servicio.descripcion }}</p>
+        <header>
+            <div class="servicios-container">
+                <h2>Tipos de Servicios en Grúa</h2>
+                <div class="item" onclick="toggleExpand(this)">
+                    <img class="foto" src="https://example.com/grua_servicio1.jpg" alt="Servicio de Remolque">
+                    <div class="item-info">
+                        <h3>Servicio de Remolque</h3>
+                        <p>Remolque de vehículos en situaciones de emergencia o accidentes.</p>
+                    </div>
+                </div>
+                <div class="item" onclick="toggleExpand(this)">
+                    <img class="foto" src="https://example.com/grua_servicio2.jpg" alt="Servicio de Elevación">
+                    <div class="item-info">
+                        <h3>Servicio de Elevación</h3>
+                        <p>Elevación de cargas pesadas en construcción o mudanzas.</p>
+                    </div>
+                </div>
+                <div class="item" onclick="toggleExpand(this)">
+                    <img class="foto" src="https://example.com/grua_servicio3.jpg" alt="Servicio de Grúa para Autos">
+                    <div class="item-info">
+                        <h3>Grúa para Autos</h3>
+                        <p>Servicios de grúa especializados para vehículos ligeros y pesados.</p>
+                    </div>
+                </div>
+                <div class="item" onclick="toggleExpand(this)">
+                    <img class="foto" src="https://example.com/grua_servicio4.jpg" alt="Servicio de Grúa para Construcción">
+                    <div class="item-info">
+                        <h3>Grúa para Construcción</h3>
+                        <p>Servicios de grúa para proyectos de construcción y obras civiles.</p>
+                    </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-    <footer>
-        <p>&copy; 2024 Grúas y Taller Mike | Todos los derechos reservados</p>
-    </footer>
-</body>
+        
+            <style>
+                .servicios-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 20px;
+                    background-color: #f9f9f9;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                }
+        
+                .item {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 10px;
+                    background-color: #fff;
+                    transition: box-shadow 0.3s;
+                    cursor: pointer;
+                }
+        
+                .item:hover {
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                }
+        
+                .foto {
+                    width: 80px;
+                    height: auto;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    transition: transform 0.3s;
+                }
+        
+                .item.expanded .foto {
+                    transform: scale(1.5);
+                    z-index: 1;
+                }
+        
+                .item-info {
+                    flex-grow: 1;
+                }
+        
+                .item-info h3 {
+                    margin: 0;
+                    font-size: 1.2em;
+                    color: #333;
+                }
+        
+                .item-info p {
+                    margin: 5px 0 0;
+                    color: #555;
+                }
+            </style>
+        
+            <script>
+                function toggleExpand(item) {
+                    item.classList.toggle('expanded');
+                }
+            </script>
+        </header>
+        
 </html>
 
 
