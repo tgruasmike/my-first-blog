@@ -1,30 +1,139 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grúas y Taller Mike</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+        .item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .foto {
+            max-width: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Grúas y Taller Mike</h1>
+        <p>La mejor opción para tus necesidades automotrices</p>
+    </header>
+    <div class="container">
+        <h2>Herramientas</h2>
+        <div class="item">
+            <img class="foto" src="https://th.bing.com/th/id/OIP.s0Bw6tUWz3yM3odAQd2dtAHaHa?w=166&h=180&c=7&r=0&o=5&pid=1.7" alt="Llave inglesa">
+            <div>
+                <h3>Llave Inglesa</h3>
+                <p>Una herramienta versátil para ajustar tuercas y tornillos de diferentes tamaños.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img class="foto" src="ruta/a/tu/foto2.jpg" alt="Destornillador">
+            <div>
+                <h3>Destornillador</h3>
+                <p>Ideal para apretar o aflojar tornillos, disponible en diferentes tamaños y tipos de cabeza.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img class="foto" src="ruta/a/tu/foto3.jpg" alt="Martillo">
+            <div>
+                <h3>Martillo</h3>
+                <p>Perfecto para clavar clavos o realizar trabajos de golpeo en general.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img class="foto" src="ruta/a/tu/foto4.jpg" alt="Taladro">
+            <div>
+                <h3>Taladro</h3>
+                <p>Herramienta eléctrica esencial para perforar diversos materiales, desde madera hasta metal.</p>
+            </div>
         </div>
         
-        {% for post in posts %}
-            <div>
-                <p> publicado: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>{{ post.text|linebreaksbr }}</p>
+        
+        <h2>Servicios Ofrecidos</h2>
+        {% for servicio in servicios %}
+            <div class="item">
+                <img class="foto" src="{{ servicio.foto }}" alt="{{ servicio.nombre }}">
+                <div>
+                    <h3>{{ servicio.nombre }}</h3>
+                    <p>{{ servicio.descripcion }}</p>
+                </div>
             </div>
         {% endfor %}
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
+    </div>
+    <footer>
+        <p>&copy; 2024 Grúas y Taller Mike | Todos los derechos reservados</p>
+    </footer>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
