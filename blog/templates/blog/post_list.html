@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grúas y Taller Mike</title>
+    <title> Gruas y talleres Mike</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #007BFF;
+            background-color: #8faccc;
             color: white;
             padding: 20px;
             text-align: center;
@@ -22,7 +22,7 @@
         }
         h2 {
             color: #333;
-            border-bottom: 2px solid #007BFF;
+            border-bottom: 2px solid #8da7c2;
             padding-bottom: 10px;
         }
         .item {
@@ -40,7 +40,7 @@
             border-radius: 5px;
         }
         footer {
-            background-color: #007BFF;
+            background-color: #83a4c7;
             color: white;
             text-align: center;
             padding: 10px;
@@ -52,39 +52,98 @@
 </head>
 <body>
     <header>
-        <h1>Grúas y Taller Mike</h1>
-        <p>La mejor opción para tus necesidades automotrices</p>
-    </header>
-    <div class="container">
-        <h2>Herramientas</h2>
-        <div class="item">
-            <img class="foto" src="https://th.bing.com/th/id/OIP.s0Bw6tUWz3yM3odAQd2dtAHaHa?w=166&h=180&c=7&r=0&o=5&pid=1.7" alt="Llave inglesa">
-            <div>
-                <h3>Llave Inglesa</h3>
-                <p>Una herramienta versátil para ajustar tuercas y tornillos de diferentes tamaños.</p>
+        <div class="herramientas-container">
+            <h2>Herramientas</h2>
+            <div class="item" onclick="toggleExpand(this)">
+                <img class="foto" src="https://th.bing.com/th/id/OIP.s0Bw6tUWz3yM3odAQd2dtAHaHa?w=166&h=180&c=7&r=0&o=5&pid=1.7" alt="Llave inglesa">
+                <div class="item-info">
+                    <h3>Llave Inglesa</h3>
+                    <p>Una herramienta versátil para ajustar tuercas y tornillos de diferentes tamaños.</p>
+                </div>
+            </div>
+            <div class="item" onclick="toggleExpand(this)">
+                <img class="foto" src="https://th.bing.com/th/id/OIP.iD8JWaiEvOlmkKFR6nJxiQHaFc?w=210&h=180&c=7&r=0&o=5&pid=1.7" alt="Destornillador">
+                <div class="item-info">
+                    <h3>Destornillador</h3>
+                    <p>Ideal para apretar o aflojar tornillos, disponible en diferentes tamaños y tipos de cabeza.</p>
+                </div>
+            </div>
+            <div class="item" onclick="toggleExpand(this)">
+                <img class="foto" src="https://th.bing.com/th/id/R.17687359e54ee4af3c9b71a7dcd8fbca?rik=Qed%2fH%2bpZL9eHqQ&pid=ImgRaw&r=0" alt="Martillo">
+                <div class="item-info">
+                    <h3>Martillo</h3>
+                    <p>Perfecto para clavar clavos o realizar trabajos de golpeo en general.</p>
+                </div>
+            </div>
+            <div class="item" onclick="toggleExpand(this)">
+                <img class="foto" src="https://th.bing.com/th/id/OIP.reXsaLHHbsr1JMz7Q98bSAHaHa?w=174&h=180&c=7&r=0&o=5&pid=1.7" alt="Taladro">
+                <div class="item-info">
+                    <h3>Taladro</h3>
+                    <p>Herramienta eléctrica esencial para perforar diversos materiales, desde madera hasta metal.</p>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <img class="foto" src="ruta/a/tu/foto2.jpg" alt="Destornillador">
-            <div>
-                <h3>Destornillador</h3>
-                <p>Ideal para apretar o aflojar tornillos, disponible en diferentes tamaños y tipos de cabeza.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img class="foto" src="ruta/a/tu/foto3.jpg" alt="Martillo">
-            <div>
-                <h3>Martillo</h3>
-                <p>Perfecto para clavar clavos o realizar trabajos de golpeo en general.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img class="foto" src="ruta/a/tu/foto4.jpg" alt="Taladro">
-            <div>
-                <h3>Taladro</h3>
-                <p>Herramienta eléctrica esencial para perforar diversos materiales, desde madera hasta metal.</p>
-            </div>
-        </div>
+        
+        <style>
+            .herramientas-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+        
+            .item {
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                background-color: #fff;
+                transition: box-shadow 0.3s;
+                cursor: pointer;
+            }
+        
+            .item:hover {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+        
+            .foto {
+                width: 80px;
+                height: auto;
+                border-radius: 5px;
+                margin-right: 15px;
+                transition: transform 0.3s;
+            }
+        
+            .item.expanded .foto {
+                transform: scale(1.5);
+                z-index: 1;
+            }
+        
+            .item-info {
+                flex-grow: 1;
+            }
+        
+            .item-info h3 {
+                margin: 0;
+                font-size: 1.2em;
+                color: #333;
+            }
+        
+            .item-info p {
+                margin: 5px 0 0;
+                color: #555;
+            }
+        </style>
+        
+        <script>
+            function toggleExpand(item) {
+                item.classList.toggle('expanded');
+            }
+        </script>
         
         
         <h2>Servicios Ofrecidos</h2>
