@@ -1,3 +1,61 @@
+html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grúas y Taller Mike</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #8faccc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            color: #f1e3e3;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+        .item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .foto {
+            max-width: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Grúas y Talleres Mike</h1>
+        <p>La mejor opción para tus necesidades automotrices</p>
+    </header>
+    <div class="container">
 
 <html lang="es">
 <head>
@@ -21,7 +79,7 @@
             padding: 20px;
         }
         h2 {
-            color: #4d4d4d;
+            color: #ffffff;
             border-bottom: 2px solid #504e4e;
             padding-bottom: 10px;
         }
@@ -388,6 +446,23 @@
         </script>
     </header>
     
+  </div>
+<h2>  </h2>
+    {% for servicio in servicios %}
+        <div class="item">
+            <img class="foto" src="{{ servicio.foto }}" alt="{{ servicio.nombre }}">
+            <div>
+                <h3>{{ servicio.nombre }}</h3>
+                <p>{{ servicio.descripcion }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<footer>
+    <p>&copy; 2024 Grúas y Taller Mike | Todos los derechos reservados</p>
+</footer>
+</body>
+
 
 
 
